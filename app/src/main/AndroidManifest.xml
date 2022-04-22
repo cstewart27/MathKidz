@@ -10,6 +10,57 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MathKidz">
         <activity
+            android:name=".DivisionHard"
+            android:exported="false" />
+        <activity
+            android:name=".DivisionMedium"
+            android:exported="false" />
+        <activity
+            android:name=".DivisionEasy"
+            android:exported="false" />
+        <activity
+            android:name=".MultiplicationHard"
+            android:exported="false" />
+        <activity
+            android:name=".MultiplicationMedium"
+            android:exported="false" />
+        <activity
+            android:name=".MultiplicationEasy"
+            android:exported="false" />
+        <activity
+            android:name=".SubtractionHard"
+            android:exported="false" />
+        <activity
+            android:name=".SubtractionMedium"
+            android:exported="false" />
+        <activity
+            android:name=".SubtractionEasy"
+            android:exported="false" />
+        <activity
+            android:name=".AdditionHard"
+            android:exported="false" />
+        <activity
+            android:name=".AdditionMedium"
+            android:exported="false" />
+        <activity
+            android:name=".AdditionEasy"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectDifficultyDivision"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectDifficultyMultiplication"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectDifficultySubtraction"
+            android:exported="false" />
+        <activity
+            android:name=".SubjectDifficultyAddition"
+            android:exported="false" />
+        <activity
+            android:name=".Menu"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
