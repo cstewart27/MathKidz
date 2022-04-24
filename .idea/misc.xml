@@ -6,13 +6,24 @@
         <entry key="..\:/Users/chris/AndroidStudioProjects/MathKidz/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/chris/AndroidStudioProjects/MathKidz/app/src/main/res/layout/activity_menu.xml" value="0.36277173913043476" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2345" />
-        <entry key="app/src/main/res/layout/activity_addition_easy.xml" value="0.2368659420289855" />
+        <entry key="app/src/main/res/layout/activity_addition_easy.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_addition_hard.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_addition_medium.xml" value="0.22282608695652173" />
+        <entry key="app/src/main/res/layout/activity_division_easy.xml" value="0.22282608695652173" />
+        <entry key="app/src/main/res/layout/activity_division_hard.xml" value="0.22282608695652173" />
+        <entry key="app/src/main/res/layout/activity_division_medium.xml" value="0.22282608695652173" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17552083333333332" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.17552083333333332" />
+        <entry key="app/src/main/res/layout/activity_multiplication_easy.xml" value="0.22282608695652173" />
+        <entry key="app/src/main/res/layout/activity_multiplication_hard.xml" value="0.22282608695652173" />
+        <entry key="app/src/main/res/layout/activity_multiplication_medium.xml" value="0.22282608695652173" />
         <entry key="app/src/main/res/layout/activity_subject_difficulty_addition.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_subject_difficulty_division.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_subject_difficulty_multiplication.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_subject_difficulty_subtraction.xml" value="0.2368659420289855" />
+        <entry key="app/src/main/res/layout/activity_subtraction_easy.xml" value="0.22282608695652173" />
+        <entry key="app/src/main/res/layout/activity_subtraction_hard.xml" value="0.22282608695652173" />
+        <entry key="app/src/main/res/layout/activity_subtraction_medium.xml" value="0.22282608695652173" />
       </map>
     </option>
   </component>
