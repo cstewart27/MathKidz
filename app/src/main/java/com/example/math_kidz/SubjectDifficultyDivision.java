@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class SubjectDifficultyDivision extends AppCompatActivity {
 
@@ -14,6 +15,16 @@ public class SubjectDifficultyDivision extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject_difficulty_division);
 
+
+        ImageButton divBackArrow = (ImageButton) findViewById(R.id.divBackArrow);
+        divBackArrow.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Menu.class);
+                startActivity(i);
+
+
+            }
+        });
         Button DivEasy = (Button) findViewById(R.id.DivEasy);
         DivEasy.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
