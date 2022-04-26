@@ -20,6 +20,11 @@ public class AdditionEasy extends AppCompatActivity {
         int AddRand1 = rand.nextInt(upperbound);
         int AddRand2 = rand.nextInt(upperbound);
 
+
+        //generating answer for user to pick from
+        int correctAnswer = AddRand1 + AddRand2;
+
+
         TextView textView = (TextView) findViewById(R.id.AdditionTextView);
         textView.setText(AddRand1 + " + " + AddRand2);
     }
