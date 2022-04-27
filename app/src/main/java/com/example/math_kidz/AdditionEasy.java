@@ -30,7 +30,7 @@ public class AdditionEasy extends AppCompatActivity {
 
 
         EditText UserInput   = (EditText)findViewById(R.id.AddEasyInput);
-//if (UserInput.getText().toString().equals(Answer))
+//if (UserInput.getText().toString().equals(Answer)) ---
 
         Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
         AnswerChecker.setOnClickListener(new View.OnClickListener() {
