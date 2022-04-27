@@ -6,4 +6,12 @@
     <string name="testing_button">Testing Button</string>
     <string name="activites">Activites</string>
     <string name="activities">Activities</string>
+    <string name="Addition">Addition</string>
+    <string name="Subtraction">Subtraction</string>
+    <string name="Multiplication">Multiplication</string>
+    <string name="Division">Division</string>
+    <string name="MathKidz">MathKidz</string>
+    <string name="Math">Math</string>
+    <string name="Kidz">Kidz</string>
+
 </resources>

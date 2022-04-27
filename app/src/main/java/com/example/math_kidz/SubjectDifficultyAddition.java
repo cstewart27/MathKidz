@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ImageButton;
 
 
 public class SubjectDifficultyAddition extends AppCompatActivity {
@@ -14,6 +15,16 @@ public class SubjectDifficultyAddition extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject_difficulty_addition);
+
+        ImageButton addBackArrow = (ImageButton) findViewById(R.id.addBackArrow);
+        addBackArrow.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Menu.class);
+                startActivity(i);
+
+
+            }
+        });
 
         Button AddEasy = (Button) findViewById(R.id.AddEasy);
         AddEasy.setOnClickListener(new View.OnClickListener() {
