@@ -29,25 +29,10 @@ public class AdditionEasy extends AppCompatActivity {
         textView.setText(AddRand1 + " + " + AddRand2);
 
 
-        EditText UserInput   = (EditText)findViewById(R.id.AddEasyInput);
-//if (UserInput.getText().toString().equals(Answer)) ---
-
-        Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
-        AnswerChecker.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-               // EditText UserInput = (EditText) findViewById(R.id.AddEasyInput);
-
-                if (UserInput.getText().toString().equals(CheckAnswer)){
-                    textView.setText("NICE!");
-                }
-            }
-        });
 
 
 
-        //if (mEdit.getText().toString().equals(Answer)) {
-         //   textView.setText("NICE!");
+
         }
     }
 
-//}
