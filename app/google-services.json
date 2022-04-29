@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "120996140459",
+    "project_id": "mathkidz-657aa",
+    "storage_bucket": "mathkidz-657aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120996140459:android:351319d8565a2ffe63aeee",
+        "android_client_info": {
+          "package_name": "com.example.math_kidz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120996140459-6j8de4rccl7hk0b4prdusjcn3f15s34a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.math_kidz",
+            "certificate_hash": "481736cc9ac35068ed899162674b8bd246a8ff11"
+          }
+        },
+        {
+          "client_id": "120996140459-2rhuibl8jii1s4ijda81sjdgq612a2om.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpOk8UN9q7XmIkhLmCaKmKn8CeJoDayAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120996140459-2rhuibl8jii1s4ijda81sjdgq612a2om.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
