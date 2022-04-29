@@ -7,12 +7,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class Menu extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+    private Button btnSignout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+
+        mAuth = FirebaseAuth.getInstance();
+        btnSignout = findViewById(R.id.signOutButton);
+
+        btnSignout.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            logout();
+
+            }
+        });
+
+
+
 
         Button AddHome = (Button) findViewById(R.id.AddHome);
         AddHome.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +71,21 @@ public class Menu extends AppCompatActivity {
 
             }
         });
+
+
+    }
+
+    public void onStart(){
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser==null){
+            startActivity(new Intent(Menu.this, Login.class));
+        }
+    }
+    public void logout() {
+
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(Menu.this, Login.class));
 
 
     }
