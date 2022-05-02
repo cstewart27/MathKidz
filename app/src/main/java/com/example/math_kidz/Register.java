@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Register extends AppCompatActivity {
 
@@ -54,6 +57,7 @@ public class Register extends AppCompatActivity {
     private void Register(){
         String user = email.getText().toString().trim();
         String pass = password.getText().toString().trim();
+        int score = 0;
         if(user.isEmpty()){
             email.setError("Email can not be empty");
         }
@@ -66,8 +70,28 @@ public class Register extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Toast.makeText(Register.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Register.this, Menu.class));
+
+                        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                        //Enters user data into Firebase realtime database
+                        Score writeUserDetails = new Score(score);
+                        //Extracts user reference from Database
+                        DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered Users");
+                        referenceProfile.child(firebaseUser.getUid()).setValue(writeUserDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                if(task.isSuccessful()){
+                                    Toast.makeText(Register.this, "User registered successfully. Please verify your email", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(Register.this, Menu.class));
+                                }
+                                else{
+                                    Toast.makeText(Register.this, "User registered failed. Please try again", Toast.LENGTH_LONG).show();
+
+                                }
+
+                            }
+                        });
+
                     }
                     else{
                         Toast.makeText(Register.this, "Registeration Failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
