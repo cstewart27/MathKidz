@@ -55,8 +55,8 @@ public class Register extends AppCompatActivity {
     }
 
     private void Register(){
-        String user = email.getText().toString().trim();
-        String pass = password.getText().toString().trim();
+        String user = email.getText().toString();
+        String pass = password.getText().toString();
         int score = 0;
         if(user.isEmpty()){
             email.setError("Email can not be empty");

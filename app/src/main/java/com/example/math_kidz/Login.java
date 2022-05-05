@@ -60,8 +60,8 @@ public class Login extends AppCompatActivity {
 
 
     private void login() {
-        String user = email.getText().toString().trim();
-        String pass = password.getText().toString().trim();
+        String user = email.getText().toString();
+        String pass = password.getText().toString();
         if(user.isEmpty()){
             email.setError("Email can not be empty");
         }
