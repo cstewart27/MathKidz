@@ -55,8 +55,8 @@ public class Register extends AppCompatActivity {
     }
 
     private void Register(){
-        String user = email.getText().toString();
-        String pass = password.getText().toString();
+        String user = email.getText().toString().trim();
+        String pass = password.getText().toString().trim();
         int score = 0;
         if(user.isEmpty()){
             email.setError("Email can not be empty");
@@ -81,7 +81,7 @@ public class Register extends AppCompatActivity {
                             public void onComplete(@NonNull Task<Void> task) {
 
                                 if(task.isSuccessful()){
-                                    Toast.makeText(Register.this, "User registered successfully. Please verify your email", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(Register.this, "User registered successfully", Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(Register.this, Menu.class));
                                 }
                                 else{
