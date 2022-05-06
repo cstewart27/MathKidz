@@ -31,6 +31,7 @@ public class Menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
 
+
         mAuth = FirebaseAuth.getInstance();
 
         FirebaseUser firebaseUser = mAuth.getCurrentUser();

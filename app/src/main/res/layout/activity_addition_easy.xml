@@ -1,56 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/textView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textAlignment="center"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".AdditionEasy">
 
 
     <TextView
+        android:id="@+id/ScoreTracker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CS"/>
+
+    <TextView
         android:id="@+id/AdditionTextView"
         android:layout_width="169dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="163dp"
-        android:layout_marginEnd="130dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="32dp"/>
 
     <EditText
         android:id="@+id/AddEasyInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/CheckButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AdditionTextView" />
+        android:inputType="number"/>
 
     <Button
         android:id="@+id/CheckButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check Answer"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="0dp" />
-
-    <TextView
-        android:id="@+id/ScoreTracker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
-        android:layout_marginEnd="149dp"
-        android:text="        "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="357dp" />
+        android:text="Check Answer" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
