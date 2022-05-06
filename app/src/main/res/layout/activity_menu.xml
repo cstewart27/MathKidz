@@ -84,6 +84,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Out" />
+
+        <TextView
+            android:id="@+id/Score"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Score" />
+
+        <TextView
+            android:id="@+id/retrieveScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CS" />
     </LinearLayout>
 
 

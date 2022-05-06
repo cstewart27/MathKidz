@@ -59,30 +59,36 @@ public class Login extends AppCompatActivity {
 
 
 
-    private void login() {
+    private void login()
+    {
         String user = email.getText().toString().trim();
         String pass = password.getText().toString().trim();
-        if(user.isEmpty()){
+        if(user.isEmpty())
+        {
             email.setError("Email can not be empty");
         }
-        if(pass.isEmpty()){
+        if(pass.isEmpty())
+        {
             password.setError("Password can not be empty");
         }
-        else{
-            mAuth.signInWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        else
+        {
+            mAuth.signInWithEmailAndPassword(user,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
+                public void onComplete(@NonNull Task<AuthResult> task)
+                {
+                    if(task.isSuccessful())
+                    {
                         Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(Login.this, Menu.class));
+                        startActivity(new Intent(Login.this , Menu.class));
                     }
-                    else{
+                    else
+                    {
                         Toast.makeText(Login.this, "Login Failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
                     }
                 }
             });
         }
-
     }
 }
+
