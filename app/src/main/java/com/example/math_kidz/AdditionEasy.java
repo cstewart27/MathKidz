@@ -86,6 +86,7 @@ public class AdditionEasy extends AppCompatActivity {
                         boolean correct = true;
                         ScoreDisplay(Score, correct);
                         CorrectAnswer=QuestionGenerator();
+                        UserInput.setText("");
 
                     }
                     else{
