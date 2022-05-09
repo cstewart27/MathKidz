@@ -81,7 +81,7 @@ public class AdditionEasy extends AppCompatActivity {
 
                 public void onClick(View view) {
 
-
+//Checking user input vs answer
                     if (UserInput.getText().toString().equals(String.valueOf(CorrectAnswer))) {
                         boolean correct = true;
                         ScoreDisplay(Score, correct);
@@ -96,7 +96,7 @@ public class AdditionEasy extends AppCompatActivity {
                     }
 
                 }
-
+//Incrementing and decrementing score based on answer validity
                 private void ScoreDisplay(int num, boolean ans) {
                     if(ans == true)
                         Score = Score + 1;
@@ -107,7 +107,7 @@ public class AdditionEasy extends AppCompatActivity {
 
 
                 }
-
+        //method to generate new question
                 public int QuestionGenerator() {
                     int upperbound = 10;
                     int AddRand1 = rand.nextInt(upperbound);
