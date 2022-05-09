@@ -111,8 +111,8 @@ public class DivisionHard extends AppCompatActivity {
                 int AddRand1 = rand.nextInt(upperbound2);
                 int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
                 int NewCorrectAnswer=AddRand2/AddRand1;
+                questionTextView.setText(AddRand2 + " / " + AddRand1);
                 return NewCorrectAnswer;
-
 
             }
 

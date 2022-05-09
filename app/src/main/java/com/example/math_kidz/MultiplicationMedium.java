@@ -113,6 +113,7 @@ public class MultiplicationMedium extends AppCompatActivity {
                 int AddRand2 = rand.nextInt(upperbound2);
                 //generating answer for user to pick from
                 int NewCorrectAnswer = AddRand1 * AddRand2;
+                questionTextView.setText(AddRand1 + " * " + AddRand2);
                 return NewCorrectAnswer;
 
 

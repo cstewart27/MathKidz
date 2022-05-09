@@ -114,7 +114,7 @@ public class MultiplicationHard extends AppCompatActivity {
                 int upperbound2=10;
                 int AddRand1 = rand.nextInt(upperbound);
                 int AddRand2 = rand.nextInt(upperbound2);
-                int NewCorrectAnswer = AddRand1 + AddRand2;
+                int NewCorrectAnswer = AddRand1 * AddRand2;
                 questionTextView.setText(AddRand1 + " * " + AddRand2);
                 return  NewCorrectAnswer;
 

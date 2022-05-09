@@ -80,7 +80,7 @@ public class MultiplicationEasy extends AppCompatActivity {
 
             public void onClick(View view) {
 
-//Checking user input vs answer
+                //Checking user input vs answer
                 if (UserInput.getText().toString().equals(String.valueOf(CorrectAnswer))) {
                     boolean correct = true;
                     ScoreDisplay(Score, correct);
@@ -111,7 +111,7 @@ public class MultiplicationEasy extends AppCompatActivity {
                 int upperbound = 10;
                 int AddRand1 = rand.nextInt(upperbound);
                 int AddRand2 = rand.nextInt(upperbound);
-                int NewCorrectAnswer = AddRand1 + AddRand2;
+                int NewCorrectAnswer = AddRand1 * AddRand2;
                 questionTextView.setText(AddRand1 + " * " + AddRand2);
                 return  NewCorrectAnswer;
 
