@@ -24,7 +24,7 @@ public class Register extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText email, password;
     private Button btnRegister;
-    private TextView textLogin;
+    private Button textLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

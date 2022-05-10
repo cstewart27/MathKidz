@@ -4,34 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFB30F"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".AdditionMedium">
+    tools:context=".AdditionEasy">
 
 
-    <TextView
-        android:id="@+id/ScoreTracker"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CS"/>
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/BackArrow"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:paddingRight="20dp"
+                android:backgroundTint="#FFB30F"
+                app:srcCompat="@drawable/arrow6"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="131dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/round_btn_left"
+                android:backgroundTint="#3943B7"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Score: "
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ScoreTracker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/round_btn_right"
+                android:backgroundTint="#3943B7"
+                android:paddingTop="5dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp"
+                android:text="CS"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/AdditionMediumTextView"
-        android:layout_width="169dp"
-        android:layout_height="32dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#ED254E"
+        android:gravity="center"
+        android:paddingLeft="100dp"
+        android:paddingTop="13dp"
+        android:paddingRight="100dp"
+        android:paddingBottom="13dp"
+        android:text="CS"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
 
     <EditText
         android:id="@+id/AddMediumInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="number"/>
+        android:layout_width="230dp"
+        android:layout_height="77dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#3943B7"
+        android:gravity="center"
+        android:hint="Answer Here"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/CheckButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="55dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#ED254E"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:text="Check Answer" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

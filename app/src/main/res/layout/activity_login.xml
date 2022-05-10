@@ -10,40 +10,109 @@
     tools:context=".Login">
 
 
-    <TextView
-        android:id="@+id/textLogin"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Enter Login Credientials"
-        android:textSize="20dp"/>
+        android:layout_marginBottom="60dp"
+        app:srcCompat="@drawable/logo2" />
 
     <EditText
         android:id="@+id/loginEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="306dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="50dp"
+        android:singleLine="true"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
         android:hint="Email"
-        android:layout_marginBottom="20dp"/>
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/loginPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="306dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="20dp"
+        android:singleLine="true"
+
+        android:background="@drawable/round_btn"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
         android:hint="Password"
-        android:layout_marginBottom="20dp"/>
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="223dp"
+        android:layout_height="44dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#ED254E"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Sign In"
+        android:layout_marginBottom="25dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:layout_marginBottom="20dp"/>
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/divider" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Or"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+
+            android:layout_weight="1"
+            app:srcCompat="@drawable/divider" />
+
+    </LinearLayout>
+
     <TextView
-        android:id="@+id/textRegister"
+        android:id="@+id/textRegister2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't Have An Account"
-        android:textSize="20dp"
+        android:text="Don't Have An Account?"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:textSize="20sp"
         android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/textRegister"
+        android:layout_width="223dp"
+        android:layout_height="44dp"
+        android:background="@drawable/round_btn"
+        android:backgroundTint="#ED254E"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Sign Up"
+        android:layout_marginBottom="20dp"/>
+
+
 
 
 </LinearLayout>

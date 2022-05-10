@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,12 +46,15 @@ public class AdditionEasy extends AppCompatActivity {
 
         getdata();
 
-//        try{
-//            String s = scoreTextView.getText().toString();
-//        }
-//        catch(Exception e){
-//          Toast.makeText(AdditionEasy.this, "Crash", Toast.LENGTH_SHORT).show();
-//          }
+        ImageButton BackArrow = (ImageButton) findViewById(R.id.BackArrow);
+        BackArrow.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),SubjectDifficultyAddition.class);
+                startActivity(i);
+
+
+            }
+        });
 
         Random rand = new Random(); //instance of random class
 

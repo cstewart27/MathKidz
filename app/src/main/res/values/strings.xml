@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Math-Kidz</string>
     <string name="medium">Medium</string>
     <string name="easy">Easy</string>
@@ -13,5 +13,6 @@
     <string name="MathKidz">MathKidz</string>
     <string name="Math">Math</string>
     <string name="Kidz">Kidz</string>
+    <string name="hintEdit" tools:ignore="ExtraTranslation">Enter Answer</string>
 
 </resources>

@@ -105,7 +105,7 @@
             android:layout_width="296dp"
             android:layout_height="77dp"
             android:layout_marginVertical="20dp"
-            android:backgroundTint="#E21D1D"
+            android:backgroundTint="@color/addMenu"
             android:background="@drawable/round_btn"
             android:text="@string/hard"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"

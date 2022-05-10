@@ -15,6 +15,8 @@
         android:gravity="center"
         android:orientation="vertical">
 
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,8 +50,8 @@
             android:layout_width="296dp"
             android:layout_height="77dp"
             android:layout_marginVertical="20dp"
-            android:backgroundTint="@color/subMenu"
             android:background="@drawable/round_btn"
+            android:backgroundTint="@color/subMenu"
             android:text="@string/Subtraction"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#000000"
@@ -60,8 +62,8 @@
             android:layout_width="296dp"
             android:layout_height="77dp"
             android:layout_marginVertical="20dp"
-            android:backgroundTint="@color/multMenu"
             android:background="@drawable/round_btn"
+            android:backgroundTint="@color/multMenu"
             android:text="@string/Multiplication"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#000000"
@@ -72,30 +74,72 @@
             android:layout_width="296dp"
             android:layout_height="77dp"
             android:layout_marginVertical="20dp"
-            android:backgroundTint="@color/divMenu"
             android:background="@drawable/round_btn"
+            android:backgroundTint="#EDF12A"
             android:text="@string/Division"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="#000000"
             android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/signOutButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Out" />
 
-        <TextView
-            android:id="@+id/Score"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Score" />
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/retrieveScore"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="CS" />
+            <TextView
+                android:id="@+id/Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/round_btn_left"
+                android:backgroundTint="#6E40C1"
+                android:paddingLeft="10dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Score: "
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/retrieveScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/round_btn_right"
+                android:backgroundTint="#6E40C1"
+                android:paddingTop="5dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp"
+                android:text="CS"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"  />
+
+            <Button
+                android:id="@+id/signOutButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/round_btn"
+                android:backgroundTint="#3943B7"
+                android:paddingTop="5dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:text="Sign Out"
+                android:textAllCaps="false"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
 

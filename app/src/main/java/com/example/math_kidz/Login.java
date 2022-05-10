@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText email, password;
     private Button btnLogin;
-    private TextView textRegister;
+    private Button textRegister;
 
 
     @Override
