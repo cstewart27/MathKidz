@@ -115,6 +115,8 @@ public class DivisionEasy extends AppCompatActivity {
             public int QuestionGenerator() {
                 int upperbound = 10;
                 int AddRand1 = rand.nextInt(upperbound);
+                if(AddRand1==0)
+                    AddRand1++;
                 int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
                 int NewCorrectAnswer = AddRand2 / AddRand1;
                 questionTextView.setText(AddRand2 + " / " + AddRand1);

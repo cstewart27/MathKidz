@@ -121,6 +121,8 @@ public class DivisionHard extends AppCompatActivity {
                 int upperbound2=10;
                 //generate random values from 0-9
                 int AddRand1 = rand.nextInt(upperbound2);
+                if(AddRand1==0)
+                    AddRand1++;
                 int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
                 int NewCorrectAnswer=AddRand2/AddRand1;
                 questionTextView.setText(AddRand2 + " / " + AddRand1);
