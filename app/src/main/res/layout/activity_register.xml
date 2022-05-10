@@ -31,12 +31,15 @@
         android:id="@+id/registerEmail"
         android:layout_width="306dp"
         android:layout_height="56dp"
-        android:layout_marginBottom="50dp"
-        android:singleLine="true"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/round_btn"
         android:backgroundTint="@color/white"
-        android:gravity="center"
+        android:drawableLeft="@drawable/mail"
+        android:drawableTint="@color/addMenu"
+        android:drawablePadding="10dp"
         android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -45,25 +48,29 @@
         android:layout_width="306dp"
         android:layout_height="56dp"
         android:layout_marginBottom="50dp"
-        android:singleLine="true"
         android:background="@drawable/round_btn"
         android:backgroundTint="@color/white"
-        android:gravity="center"
+        android:drawableLeft="@drawable/passwordlogo"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
         android:hint="Password"
+        android:inputType="textPassword"
+        android:singleLine="true"
         android:textSize="24sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"  />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="223dp"
         android:layout_height="44dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/round_btn"
         android:backgroundTint="#3943B7"
+        android:text="@string/Sign_Up"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="Register"
-        android:layout_marginBottom="25dp"/>
+        tools:ignore="TouchTargetSizeCheck" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -109,16 +116,17 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginBottom="20dp"/>
+
     <Button
         android:id="@+id/textLogin"
         android:layout_width="223dp"
         android:layout_height="44dp"
-        android:background="@drawable/round_btn"
-        android:backgroundTint="#3943B7"
-        android:textColor="#FFFFFF"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/hollow_btn_blue"
+        android:text="@string/Sign_In"
+        android:textColor="#3943B7"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:text="Sign Up"
-        android:layout_marginBottom="20dp"/>
+        tools:ignore="TouchTargetSizeCheck" />
 
 </LinearLayout>

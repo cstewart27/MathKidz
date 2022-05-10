@@ -64,6 +64,9 @@ public class Register extends AppCompatActivity {
         if(pass.isEmpty()){
             password.setError("Password can not be empty");
         }
+        if(pass.length()<8){
+            password.setError("Password needs to be at least 8 characters");
+        }
         else{
 
             mAuth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -94,7 +97,7 @@ public class Register extends AppCompatActivity {
 
                     }
                     else{
-                        Toast.makeText(Register.this, "Registeration Failed"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Register.this, "Registeration Failed: "+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
             });

@@ -22,11 +22,14 @@
         android:layout_width="306dp"
         android:layout_height="56dp"
         android:layout_marginBottom="50dp"
-        android:singleLine="true"
         android:background="@drawable/round_btn"
         android:backgroundTint="@color/white"
-        android:gravity="center"
+        android:drawableLeft="@drawable/mail"
+        android:drawableTint="@color/addMenu"
+        android:drawablePadding="10dp"
         android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:singleLine="true"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -35,12 +38,14 @@
         android:layout_width="306dp"
         android:layout_height="56dp"
         android:layout_marginBottom="20dp"
-        android:singleLine="true"
-
         android:background="@drawable/round_btn"
         android:backgroundTint="@color/white"
-        android:gravity="center"
+        android:drawableLeft="@drawable/passwordlogo"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
         android:hint="Password"
+        android:inputType="textPassword"
+        android:singleLine="true"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -48,13 +53,13 @@
         android:id="@+id/btnLogin"
         android:layout_width="223dp"
         android:layout_height="44dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/round_btn"
         android:backgroundTint="#ED254E"
+        android:text="@string/Sign_In"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:text="Sign In"
-        android:layout_marginBottom="25dp"/>
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -100,17 +105,17 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginBottom="20dp"/>
+
     <Button
         android:id="@+id/textRegister"
         android:layout_width="223dp"
         android:layout_height="44dp"
-        android:background="@drawable/round_btn"
-        android:backgroundTint="#ED254E"
-        android:textColor="#FFFFFF"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/hollow_btn_bright_red"
+        android:text="@string/Sign_Up"
+        android:textColor="#ED254E"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:text="Sign Up"
-        android:layout_marginBottom="20dp"/>
+        android:textStyle="bold" />
 
 
 

@@ -14,5 +14,8 @@
     <string name="Math">Math</string>
     <string name="Kidz">Kidz</string>
     <string name="hintEdit" tools:ignore="ExtraTranslation">Enter Answer</string>
+    <string name="Sign_In">Sign In</string>
+    <string name="Sign_Up">Sign Up</string>
+
 
 </resources>
