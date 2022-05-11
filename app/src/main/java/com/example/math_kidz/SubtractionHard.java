@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,13 +24,16 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Random;
 
 public class SubtractionHard extends AppCompatActivity {
-
     FirebaseDatabase firebaseDatabase;
     DatabaseReference referenceProfile;
     private FirebaseAuth mAuth;
     private int CorrectAnswer;
     TextView scoreTextView;
     int Score;
+    Editable theInput;
+    boolean positiveNumber = true;
+    boolean hasDecimal = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,4 +171,84 @@ public class SubtractionHard extends AppCompatActivity {
         });
 
     }
+    //The following are the methods for the individual number buttons
+    public void add0 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "0");
+    }
+    public void add1 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "1");
+    }
+    public void add2 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "2");
+    }
+    public void add3 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "3");
+    }
+    public void add4 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "4");
+    }
+    public void add5 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "5");
+    }
+    public void add6 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "6");
+    }
+    public void add7 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "7");
+    }
+    public void add8 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "8");
+    }
+    public void add9 (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText(theInput + "9");
+    }
+    public void addDecimal (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        if (hasDecimal == false){
+            UserInput.setText(theInput + ".");
+            hasDecimal = true;
+        }
+    }
+    public void clearCalculator (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+        UserInput.setText("");
+        hasDecimal = false;
+    }
+    public void addNegative (View v){
+        TextView UserInput = findViewById(R.id.AddEasyInput);
+        theInput = UserInput.getEditableText();
+
+        if (positiveNumber == true){
+            UserInput.setText("-" + theInput);
+            positiveNumber = false;
+        }
+        else{
+            theInput.delete(0,1);
+            UserInput.setText(theInput);
+            positiveNumber = true;
+        }
+    }
+
 }
