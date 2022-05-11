@@ -1,4 +1,4 @@
-package com.example.math_kidz;
+package com.math_kidz.math_kidz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.math_kidz.math_kidz.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,8 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
-public class AdditionMedium extends AppCompatActivity {
-
+public class DivisionEasy extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference referenceProfile;
     private FirebaseAuth mAuth;
@@ -34,8 +34,7 @@ public class AdditionMedium extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addition_medium);
-
+        setContentView(R.layout.activity_division_easy);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -51,7 +50,7 @@ public class AdditionMedium extends AppCompatActivity {
         ImageButton BackArrow = (ImageButton) findViewById(R.id.BackArrow);
         BackArrow.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),SubjectDifficultyAddition.class);
+                Intent i = new Intent(getApplicationContext(),SubjectDifficultyDivision.class);
                 startActivity(i);
 
 
@@ -59,24 +58,23 @@ public class AdditionMedium extends AppCompatActivity {
         });
 
 
+
         Random rand = new Random(); //instance of random class
-
-
-        int upperbound = 100;
-        //generate random values from 0-99
+        int upperbound = 10;
+        //generate random values from 0-9
         int AddRand1 = rand.nextInt(upperbound);
-        int AddRand2 = rand.nextInt(upperbound);
+        int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
 
 
         //generating answer for user to pick from
-        CorrectAnswer = AddRand1 + AddRand2;
+        CorrectAnswer = AddRand2 / AddRand1;
 
 
 
-        TextView questionTextView = (TextView) findViewById(R.id.AdditionMediumTextView);
-        questionTextView.setText(AddRand1 + " + " + AddRand2);
+        TextView questionTextView = (TextView) findViewById(R.id.DivisionTextView);
+        questionTextView.setText(AddRand2 + " / " + AddRand1);
 
-        EditText UserInput = (EditText) findViewById(R.id.AddMediumInput);
+        EditText UserInput = (EditText) findViewById(R.id.DivEasyInput);
 
         Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
 
@@ -116,11 +114,13 @@ public class AdditionMedium extends AppCompatActivity {
             }
             //method to generate new question
             public int QuestionGenerator() {
-                int upperbound = 100;
+                int upperbound = 10;
                 int AddRand1 = rand.nextInt(upperbound);
-                int AddRand2 = rand.nextInt(upperbound);
-                int NewCorrectAnswer = AddRand1 + AddRand2;
-                questionTextView.setText(AddRand1 + " + " + AddRand2);
+                if(AddRand1==0)
+                    AddRand1++;
+                int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
+                int NewCorrectAnswer = AddRand2 / AddRand1;
+                questionTextView.setText(AddRand2 + " / " + AddRand1);
                 return  NewCorrectAnswer;
 
 
@@ -152,9 +152,12 @@ public class AdditionMedium extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 // calling on cancelled method when we receive
                 // any error or we are not able to get the data.
-                Toast.makeText(AdditionMedium.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DivisionEasy.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 }
+
+
+

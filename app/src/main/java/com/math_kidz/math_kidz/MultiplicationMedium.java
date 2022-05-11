@@ -1,4 +1,4 @@
-package com.example.math_kidz;
+package com.math_kidz.math_kidz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.math_kidz.math_kidz.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
-public class AdditionEasy extends AppCompatActivity {
+public class MultiplicationMedium extends AppCompatActivity {
+
     FirebaseDatabase firebaseDatabase;
     DatabaseReference referenceProfile;
     private FirebaseAuth mAuth;
@@ -33,7 +35,7 @@ public class AdditionEasy extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addition_easy);
+        setContentView(R.layout.activity_multiplication_medium);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -49,7 +51,7 @@ public class AdditionEasy extends AppCompatActivity {
         ImageButton BackArrow = (ImageButton) findViewById(R.id.BackArrow);
         BackArrow.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),SubjectDifficultyAddition.class);
+                Intent i = new Intent(getApplicationContext(),SubjectDifficultyMultiplication.class);
                 startActivity(i);
 
 
@@ -59,72 +61,78 @@ public class AdditionEasy extends AppCompatActivity {
         Random rand = new Random(); //instance of random class
 
 
-        int upperbound = 10;
+        //generate random values from 0-99
+        int upperbound = 100;
         //generate random values from 0-9
+        int upperbound2=10;
         int AddRand1 = rand.nextInt(upperbound);
-        int AddRand2 = rand.nextInt(upperbound);
+        int AddRand2 = rand.nextInt(upperbound2);
 
 
         //generating answer for user to pick from
-        CorrectAnswer = AddRand1 + AddRand2;
+        CorrectAnswer = AddRand1 * AddRand2;
 
 
 
-        TextView questionTextView = (TextView) findViewById(R.id.AdditionTextView);
-        questionTextView.setText(AddRand1 + " + " + AddRand2);
+        TextView questionTextView = (TextView) findViewById(R.id.MultiplicationMediumTextView);
+        questionTextView.setText(AddRand1 + " * " + AddRand2);
 
-        EditText UserInput = (EditText) findViewById(R.id.AddEasyInput);
+        EditText UserInput = (EditText) findViewById(R.id.MultMediumInput);
 
         Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
 
 
 
-            AnswerChecker.setOnClickListener(new View.OnClickListener() {
+        AnswerChecker.setOnClickListener(new View.OnClickListener() {
 
 
 
-                public void onClick(View view) {
+            public void onClick(View view) {
 
 //Checking user input vs answer
-                    if (UserInput.getText().toString().equals(String.valueOf(CorrectAnswer))) {
-                        boolean correct = true;
-                        ScoreDisplay(Score, correct);
-                        CorrectAnswer=QuestionGenerator();
-                        UserInput.setText("");
-
-                    }
-                    else{
-                        boolean incorrect = false;
-                        ScoreDisplay(Score, incorrect);
-
-                    }
+                if (UserInput.getText().toString().equals(String.valueOf(CorrectAnswer))) {
+                    boolean correct = true;
+                    ScoreDisplay(Score, correct);
+                    CorrectAnswer=QuestionGenerator();
+                    UserInput.setText("");
 
                 }
-//Incrementing and decrementing score based on answer validity
-                private void ScoreDisplay(int num, boolean ans) {
-                    if(ans == true)
-                        Score = Score + 1;
-                    else
-                        Score = Score - 1;
-                    referenceProfile.child("totalScore0").setValue(Score);
-                    getdata();
-
-
-                }
-        //method to generate new question
-                public int QuestionGenerator() {
-                    int upperbound = 10;
-                    int AddRand1 = rand.nextInt(upperbound);
-                    int AddRand2 = rand.nextInt(upperbound);
-                    int NewCorrectAnswer = AddRand1 + AddRand2;
-                    questionTextView.setText(AddRand1 + " + " + AddRand2);
-                    return  NewCorrectAnswer;
-
+                else{
+                    boolean incorrect = false;
+                    ScoreDisplay(Score, incorrect);
 
                 }
 
+            }
+            //Incrementing and decrementing score based on answer validity
+            private void ScoreDisplay(int num, boolean ans) {
+                if(ans == true)
+                    Score = Score + 1;
+                else
+                    Score = Score - 1;
+                referenceProfile.child("totalScore0").setValue(Score);
+                getdata();
 
-            });
+
+            }
+            //method to generate new question
+            public int QuestionGenerator() {
+                //generate random values from 0-99
+                int upperbound = 100;
+                //generate random values from 0-9
+                int upperbound2 = 10;
+                int AddRand1 = rand.nextInt(upperbound);
+                int AddRand2 = rand.nextInt(upperbound2);
+                //generating answer for user to pick from
+                int NewCorrectAnswer = AddRand1 * AddRand2;
+                questionTextView.setText(AddRand1 + " * " + AddRand2);
+                return NewCorrectAnswer;
+
+
+            }
+
+
+        });
 
 
 
@@ -149,7 +157,7 @@ public class AdditionEasy extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 // calling on cancelled method when we receive
                 // any error or we are not able to get the data.
-                Toast.makeText(AdditionEasy.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MultiplicationMedium.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
             }
         });
 

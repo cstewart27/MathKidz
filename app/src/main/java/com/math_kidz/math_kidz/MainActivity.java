@@ -1,12 +1,12 @@
-package com.example.math_kidz;
+package com.math_kidz.math_kidz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
+
+import com.math_kidz.math_kidz.R;
 
 public class MainActivity extends AppCompatActivity {
 

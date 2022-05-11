@@ -1,4 +1,4 @@
-package com.example.math_kidz;
+package com.math_kidz.math_kidz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.math_kidz.math_kidz.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
-public class MultiplicationMedium extends AppCompatActivity {
+public class MultiplicationHard extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference referenceProfile;
@@ -34,7 +35,7 @@ public class MultiplicationMedium extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multiplication_medium);
+        setContentView(R.layout.activity_multiplication_hard);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -57,11 +58,17 @@ public class MultiplicationMedium extends AppCompatActivity {
             }
         });
 
+//        try{
+//            String s = scoreTextView.getText().toString();
+//        }
+//        catch(Exception e){
+//          Toast.makeText(AdditionEasy.this, "Crash", Toast.LENGTH_SHORT).show();
+//          }
+
         Random rand = new Random(); //instance of random class
 
-
         //generate random values from 0-99
-        int upperbound = 100;
+        int upperbound = 1000;
         //generate random values from 0-9
         int upperbound2=10;
         int AddRand1 = rand.nextInt(upperbound);
@@ -73,10 +80,10 @@ public class MultiplicationMedium extends AppCompatActivity {
 
 
 
-        TextView questionTextView = (TextView) findViewById(R.id.MultiplicationMediumTextView);
+        TextView questionTextView = (TextView) findViewById(R.id.MultiplicationHardTextView);
         questionTextView.setText(AddRand1 + " * " + AddRand2);
 
-        EditText UserInput = (EditText) findViewById(R.id.MultMediumInput);
+        EditText UserInput = (EditText) findViewById(R.id.MultHardInput);
 
         Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
 
@@ -116,16 +123,13 @@ public class MultiplicationMedium extends AppCompatActivity {
             }
             //method to generate new question
             public int QuestionGenerator() {
-                //generate random values from 0-99
-                int upperbound = 100;
-                //generate random values from 0-9
-                int upperbound2 = 10;
+                int upperbound = 1000;
+                int upperbound2=10;
                 int AddRand1 = rand.nextInt(upperbound);
                 int AddRand2 = rand.nextInt(upperbound2);
-                //generating answer for user to pick from
                 int NewCorrectAnswer = AddRand1 * AddRand2;
                 questionTextView.setText(AddRand1 + " * " + AddRand2);
-                return NewCorrectAnswer;
+                return  NewCorrectAnswer;
 
 
             }
@@ -156,7 +160,7 @@ public class MultiplicationMedium extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 // calling on cancelled method when we receive
                 // any error or we are not able to get the data.
-                Toast.makeText(MultiplicationMedium.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MultiplicationHard.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
             }
         });
 

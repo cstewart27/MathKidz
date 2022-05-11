@@ -7,7 +7,7 @@
     android:background="#FFB30F"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".SubjectDifficultyMultiplication">
+    tools:context="com.math_kidz.math_kidz.SubjectDifficultyMultiplication">
 
 
 

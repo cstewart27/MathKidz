@@ -8,7 +8,7 @@ android {
     compileSdk 32
     buildToolsVersion '32.0.0'
     defaultConfig {
-        applicationId "com.example.math_kidz"
+        applicationId "com.math_kidz.math_kidz"
         minSdk 21
         targetSdk 31
         versionCode 1

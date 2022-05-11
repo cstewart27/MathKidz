@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.math_kidz">
+    package="com.math_kidz.math_kidz">
     <uses-permission android:name="android.permission.INTERNET" />
 
 
@@ -14,64 +14,64 @@
         android:theme="@style/Theme.MathKidz"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Register"
+            android:name="com.math_kidz.math_kidz.Register"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.math_kidz.math_kidz.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".DivisionHard"
+            android:name="com.math_kidz.math_kidz.DivisionHard"
             android:exported="false" />
         <activity
-            android:name=".DivisionMedium"
+            android:name="com.math_kidz.math_kidz.DivisionMedium"
             android:exported="false" />
         <activity
-            android:name=".DivisionEasy"
+            android:name="com.math_kidz.math_kidz.DivisionEasy"
             android:exported="false" />
         <activity
-            android:name=".MultiplicationHard"
+            android:name="com.math_kidz.math_kidz.MultiplicationHard"
             android:exported="false" />
         <activity
-            android:name=".MultiplicationMedium"
+            android:name="com.math_kidz.math_kidz.MultiplicationMedium"
             android:exported="false" />
         <activity
-            android:name=".MultiplicationEasy"
+            android:name="com.math_kidz.math_kidz.MultiplicationEasy"
             android:exported="false" />
         <activity
-            android:name=".SubtractionHard"
+            android:name="com.math_kidz.math_kidz.SubtractionHard"
             android:exported="false" />
         <activity
-            android:name=".SubtractionMedium"
+            android:name="com.math_kidz.math_kidz.SubtractionMedium"
             android:exported="false" />
         <activity
-            android:name=".SubtractionEasy"
+            android:name="com.math_kidz.math_kidz.SubtractionEasy"
             android:exported="false" />
         <activity
-            android:name=".AdditionHard"
+            android:name="com.math_kidz.math_kidz.AdditionHard"
             android:exported="false" />
         <activity
-            android:name=".AdditionMedium"
+            android:name="com.math_kidz.math_kidz.AdditionMedium"
             android:exported="false" />
         <activity
-            android:name=".AdditionEasy"
+            android:name="com.math_kidz.math_kidz.AdditionEasy"
             android:exported="true" />
         <activity
-            android:name=".SubjectDifficultyDivision"
+            android:name="com.math_kidz.math_kidz.SubjectDifficultyDivision"
             android:exported="false" />
         <activity
-            android:name=".SubjectDifficultyMultiplication"
+            android:name="com.math_kidz.math_kidz.SubjectDifficultyMultiplication"
             android:exported="false" />
         <activity
-            android:name=".SubjectDifficultySubtraction"
+            android:name="com.math_kidz.math_kidz.SubjectDifficultySubtraction"
             android:exported="false" />
         <activity
-            android:name=".SubjectDifficultyAddition"
+            android:name="com.math_kidz.math_kidz.SubjectDifficultyAddition"
             android:exported="false" />
         <activity
-            android:name=".Menu"
+            android:name="com.math_kidz.math_kidz.Menu"
             android:exported="false" />
         <activity
-            android:name=".Login"
+            android:name="com.math_kidz.math_kidz.Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

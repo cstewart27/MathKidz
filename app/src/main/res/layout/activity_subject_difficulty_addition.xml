@@ -7,7 +7,7 @@
     android:background="#FFB30F"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".SubjectDifficultyAddition">
+    tools:context="com.math_kidz.math_kidz.SubjectDifficultyAddition">
 
     <LinearLayout
         android:layout_width="match_parent"

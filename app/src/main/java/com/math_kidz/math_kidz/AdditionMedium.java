@@ -1,4 +1,4 @@
-package com.example.math_kidz;
+package com.math_kidz.math_kidz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.math_kidz.math_kidz.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
-public class SubtractionEasy extends AppCompatActivity {
+public class AdditionMedium extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference referenceProfile;
@@ -34,7 +35,8 @@ public class SubtractionEasy extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subtraction_easy);
+        setContentView(R.layout.activity_addition_medium);
+
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -50,7 +52,7 @@ public class SubtractionEasy extends AppCompatActivity {
         ImageButton BackArrow = (ImageButton) findViewById(R.id.BackArrow);
         BackArrow.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),SubjectDifficultySubtraction.class);
+                Intent i = new Intent(getApplicationContext(),SubjectDifficultyAddition.class);
                 startActivity(i);
 
 
@@ -59,31 +61,30 @@ public class SubtractionEasy extends AppCompatActivity {
 
 
         Random rand = new Random(); //instance of random class
-        int upperbound = 10;
-        //generate random values from 0-9
+
+
+        int upperbound = 100;
+        //generate random values from 0-99
         int AddRand1 = rand.nextInt(upperbound);
         int AddRand2 = rand.nextInt(upperbound);
 
-        TextView textView = (TextView) findViewById(R.id.SubtractionTextView);
 
-        if (AddRand1 >= AddRand2) {
-            textView.setText(AddRand1 + " - " + AddRand2);
-            CorrectAnswer = AddRand1 - AddRand2;
-
-        } else {
-            textView.setText(AddRand2 + " - " + AddRand1);
-            CorrectAnswer = AddRand2 - AddRand1;
-
-        }
+        //generating answer for user to pick from
+        CorrectAnswer = AddRand1 + AddRand2;
 
 
 
-        EditText UserInput = (EditText) findViewById(R.id.SubEasyInput);
+        TextView questionTextView = (TextView) findViewById(R.id.AdditionMediumTextView);
+        questionTextView.setText(AddRand1 + " + " + AddRand2);
+
+        EditText UserInput = (EditText) findViewById(R.id.AddMediumInput);
 
         Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
 
 
+
         AnswerChecker.setOnClickListener(new View.OnClickListener() {
+
 
 
             public void onClick(View view) {
@@ -92,20 +93,20 @@ public class SubtractionEasy extends AppCompatActivity {
                 if (UserInput.getText().toString().equals(String.valueOf(CorrectAnswer))) {
                     boolean correct = true;
                     ScoreDisplay(Score, correct);
-                    CorrectAnswer = QuestionGenerator();
+                    CorrectAnswer=QuestionGenerator();
                     UserInput.setText("");
 
-                } else {
+                }
+                else{
                     boolean incorrect = false;
                     ScoreDisplay(Score, incorrect);
 
                 }
 
             }
-
             //Incrementing and decrementing score based on answer validity
             private void ScoreDisplay(int num, boolean ans) {
-                if (ans == true)
+                if(ans == true)
                     Score = Score + 1;
                 else
                     Score = Score - 1;
@@ -114,25 +115,16 @@ public class SubtractionEasy extends AppCompatActivity {
 
 
             }
-
             //method to generate new question
             public int QuestionGenerator() {
-                int upperbound = 10;
-                //generate random values from 0-9
+                int upperbound = 100;
                 int AddRand1 = rand.nextInt(upperbound);
                 int AddRand2 = rand.nextInt(upperbound);
-                if (AddRand1 >= AddRand2) {
-                    TextView textView = (TextView) findViewById(R.id.SubtractionTextView);
-                    textView.setText(AddRand1 + " - " + AddRand2);
-                    int NewCorrectAnswer = AddRand1 - AddRand2;
-                    return  NewCorrectAnswer;
+                int NewCorrectAnswer = AddRand1 + AddRand2;
+                questionTextView.setText(AddRand1 + " + " + AddRand2);
+                return  NewCorrectAnswer;
 
-                } else {
-                    TextView textView = (TextView) findViewById(R.id.SubtractionTextView);
-                    textView.setText(AddRand2 + " - " + AddRand1);
-                    int NewCorrectAnswer = AddRand2 - AddRand1;
-                    return  NewCorrectAnswer;
-                }
+
             }
 
 
@@ -161,14 +153,9 @@ public class SubtractionEasy extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 // calling on cancelled method when we receive
                 // any error or we are not able to get the data.
-                Toast.makeText(SubtractionEasy.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdditionMedium.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 }
-
-
-
-
-

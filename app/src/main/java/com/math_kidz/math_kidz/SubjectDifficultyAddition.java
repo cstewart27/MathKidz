@@ -1,4 +1,4 @@
-package com.example.math_kidz;
+package com.math_kidz.math_kidz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.math_kidz.math_kidz.R;
 
 
 public class SubjectDifficultyAddition extends AppCompatActivity {

@@ -1,4 +1,4 @@
-package com.example.math_kidz;
+package com.math_kidz.math_kidz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.math_kidz.math_kidz.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
-public class DivisionMedium extends AppCompatActivity {
+public class SubtractionHard extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference referenceProfile;
@@ -34,7 +35,7 @@ public class DivisionMedium extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_division_medium);
+        setContentView(R.layout.activity_subtraction_hard);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -50,7 +51,7 @@ public class DivisionMedium extends AppCompatActivity {
         ImageButton BackArrow = (ImageButton) findViewById(R.id.BackArrow);
         BackArrow.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),SubjectDifficultyDivision.class);
+                Intent i = new Intent(getApplicationContext(),SubjectDifficultySubtraction.class);
                 startActivity(i);
 
 
@@ -60,30 +61,31 @@ public class DivisionMedium extends AppCompatActivity {
 
 
         Random rand = new Random(); //instance of random class
-        int upperbound = 100;
-        //generate random values from 0-99
-        int upperbound2=10;
-        //generate random values from 0-9
-        int AddRand1 = rand.nextInt(upperbound2);
-        int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
+        int upperbound = 1000;
+        //generate random values from 0-999
+        int AddRand1 = rand.nextInt(upperbound);
+        int AddRand2 = rand.nextInt(upperbound);
+
+        TextView textView = (TextView) findViewById(R.id.SubtractionHardTextView);
+
+        if (AddRand1 >= AddRand2) {
+            textView.setText(AddRand1 + " - " + AddRand2);
+            CorrectAnswer = AddRand1 - AddRand2;
+
+        } else {
+            textView.setText(AddRand2 + " - " + AddRand1);
+            CorrectAnswer = AddRand2 - AddRand1;
+
+        }
 
 
-        //generating answer for user to pick from
-        CorrectAnswer = AddRand2 / AddRand1;
 
-
-
-        TextView questionTextView = (TextView) findViewById(R.id.DivisionMediumTextView);
-        questionTextView.setText(AddRand2 + " / " + AddRand1);
-
-        EditText UserInput = (EditText) findViewById(R.id.DivMediumInput);
+        EditText UserInput = (EditText) findViewById(R.id.SubHardInput);
 
         Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
 
 
-
         AnswerChecker.setOnClickListener(new View.OnClickListener() {
-
 
 
             public void onClick(View view) {
@@ -92,20 +94,20 @@ public class DivisionMedium extends AppCompatActivity {
                 if (UserInput.getText().toString().equals(String.valueOf(CorrectAnswer))) {
                     boolean correct = true;
                     ScoreDisplay(Score, correct);
-                    CorrectAnswer=QuestionGenerator();
+                    CorrectAnswer = QuestionGenerator();
                     UserInput.setText("");
 
-                }
-                else{
+                } else {
                     boolean incorrect = false;
                     ScoreDisplay(Score, incorrect);
 
                 }
 
             }
+
             //Incrementing and decrementing score based on answer validity
             private void ScoreDisplay(int num, boolean ans) {
-                if(ans == true)
+                if (ans == true)
                     Score = Score + 1;
                 else
                     Score = Score - 1;
@@ -114,20 +116,25 @@ public class DivisionMedium extends AppCompatActivity {
 
 
             }
+
             //method to generate new question
             public int QuestionGenerator() {
-                int upperbound = 100;
-                //generate random values from 0-99
-                int upperbound2=10;
-                //generate random values from 0-9
-                int AddRand1 = rand.nextInt(upperbound2);
-                if(AddRand1==0)
-                    AddRand1++;
-                int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
-                int NewCorrectAnswer=AddRand2/AddRand1;
-                questionTextView.setText(AddRand2 + " / " + AddRand1);
-                return NewCorrectAnswer;
+                int upperbound = 1000;
+                //generate random values from 0-999
+                int AddRand1 = rand.nextInt(upperbound);
+                int AddRand2 = rand.nextInt(upperbound);
+                if (AddRand1 >= AddRand2) {
+                    TextView textView = (TextView) findViewById(R.id.SubtractionHardTextView);
+                    textView.setText(AddRand1 + " - " + AddRand2);
+                    int NewCorrectAnswer = AddRand1 - AddRand2;
+                    return  NewCorrectAnswer;
 
+                } else {
+                    TextView textView = (TextView) findViewById(R.id.SubtractionHardTextView);
+                    textView.setText(AddRand2 + " - " + AddRand1);
+                    int NewCorrectAnswer = AddRand2 - AddRand1;
+                    return  NewCorrectAnswer;
+                }
             }
 
 
@@ -156,7 +163,7 @@ public class DivisionMedium extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 // calling on cancelled method when we receive
                 // any error or we are not able to get the data.
-                Toast.makeText(DivisionMedium.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SubtractionHard.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
             }
         });
 
