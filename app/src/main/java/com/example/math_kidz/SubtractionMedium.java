@@ -79,7 +79,7 @@ public class SubtractionMedium extends AppCompatActivity {
         }
 
 
-        EditText UserInput = (EditText) findViewById(R.id.SubMediumInput);
+        TextView UserInput = (TextView) findViewById(R.id.SubMediumInput);
 
         Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
 
@@ -169,63 +169,63 @@ public class SubtractionMedium extends AppCompatActivity {
     }
     //The following are the methods for the individual number buttons
     public void add0 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "0");
     }
     public void add1 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "1");
     }
     public void add2 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "2");
     }
     public void add3 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "3");
     }
     public void add4 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "4");
     }
     public void add5 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "5");
     }
     public void add6 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "6");
     }
     public void add7 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "7");
     }
     public void add8 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "8");
     }
     public void add9 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "9");
     }
 
     public void clearCalculator (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText("");
     }
     public void addNegative (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.SubMediumInput);
         theInput = UserInput.getEditableText();
 
         if (positiveNumber == true){
