@@ -121,6 +121,10 @@ public class DivisionEasy extends AppCompatActivity {
                     AddRand1++;
                 int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
                 int NewCorrectAnswer = AddRand2 / AddRand1;
+                if(AddRand2==0)
+                    AddRand2++;
+                if(AddRand2==AddRand1)
+                    AddRand2++;
                 questionTextView.setText(AddRand2 + " / " + AddRand1);
                 return  NewCorrectAnswer;
 
