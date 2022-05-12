@@ -32,7 +32,6 @@ public class MultiplicationHard extends AppCompatActivity {
     int Score;
     Editable theInput;
     boolean positiveNumber = true;
-    boolean hasDecimal = false;
 
 
     @Override
@@ -219,19 +218,10 @@ public class MultiplicationHard extends AppCompatActivity {
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "9");
     }
-    public void addDecimal (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
-        theInput = UserInput.getEditableText();
-        if (hasDecimal == false){
-            UserInput.setText(theInput + ".");
-            hasDecimal = true;
-        }
-    }
     public void clearCalculator (View v){
         TextView UserInput = findViewById(R.id.AddEasyInput);
         theInput = UserInput.getEditableText();
         UserInput.setText("");
-        hasDecimal = false;
     }
     public void addNegative (View v){
         TextView UserInput = findViewById(R.id.AddEasyInput);

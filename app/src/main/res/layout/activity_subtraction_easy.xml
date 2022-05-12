@@ -248,17 +248,9 @@
             android:layout_width="28dp"
             android:layout_height="55dp" />
 
-        <Button
-            android:id="@+id/PosNegButton"
+        <Space
             android:layout_width="70dp"
-            android:layout_height="55dp"
-            android:background="@drawable/round_btn"
-            android:backgroundTint="#FFFFFF"
-            android:onClick="addNegative"
-            android:text="+/-"
-            android:textColor="#ED254E"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:layout_height="55dp" />
 
     </LinearLayout>
 
@@ -348,13 +340,13 @@
             android:layout_height="55dp" />
 
         <Button
-            android:id="@+id/DecimalButton"
+            android:id="@+id/PosNegButton"
             android:layout_width="70dp"
             android:layout_height="55dp"
             android:background="@drawable/round_btn"
             android:backgroundTint="#FFFFFF"
-            android:onClick="addDecimal"
-            android:text="."
+            android:onClick="addNegative"
+            android:text="+/-"
             android:textColor="#ED254E"
             android:textSize="20dp"
             android:textStyle="bold" />
