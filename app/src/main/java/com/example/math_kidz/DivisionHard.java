@@ -117,8 +117,12 @@ public class DivisionHard extends AppCompatActivity {
             //method to generate new question
             public int QuestionGenerator() {
                 int upperbound = 1000;
+                if(upperbound==0)
+                    upperbound++;
                 //generate random values from 0-99
                 int upperbound2=10;
+                if(upperbound2==0)
+                    upperbound2++;
                 //generate random values from 0-9
                 int AddRand1 = rand.nextInt(upperbound2);
                 if(AddRand1==0)
