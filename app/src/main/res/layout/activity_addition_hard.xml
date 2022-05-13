@@ -95,7 +95,7 @@
         android:textStyle="bold" />
 
 
-    <EditText
+    <TextView
         android:id="@+id/AddHardInput"
         android:layout_width="230dp"
         android:layout_height="77dp"
@@ -123,7 +123,247 @@
         android:text="Check Answer" />
 
     <Space
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="28dp"
+        android:layout_height="38dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Number7Button"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add7"
+            android:text="7"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/Number8Button"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add8"
+            android:text="8"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/Number9Button"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add9"
+            android:text="9"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/ACButton"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="clearCalculator"
+            android:text="AC"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Number4Button"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add4"
+            android:text="4"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/Number5Button"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add5"
+            android:text="5"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/Number6Button"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add6"
+            android:text="6"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Space
+            android:layout_width="70dp"
+            android:layout_height="55dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Number1Button"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add1"
+            android:text="1"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/Number2Button"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add2"
+            android:text="2"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/Number3Button"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add3"
+            android:text="3"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+
+        <Space
+            android:layout_width="70dp"
+            android:layout_height="55dp" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/Number0Button"
+            android:layout_width="168dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="add0"
+            android:text="0"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Button
+            android:id="@+id/PosNegButton"
+            android:layout_width="70dp"
+            android:layout_height="55dp"
+            android:background="@drawable/round_btn"
+            android:backgroundTint="#FFFFFF"
+            android:onClick="addNegative"
+            android:text="+/-"
+            android:textColor="#ED254E"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="28dp"
+            android:layout_height="55dp" />
+
+        <Space
+            android:layout_width="70dp"
+            android:layout_height="55dp" />
+
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="28dp"
+        android:layout_height="38dp" />
 
 </LinearLayout>
