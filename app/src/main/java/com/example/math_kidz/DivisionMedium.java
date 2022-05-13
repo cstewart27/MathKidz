@@ -120,13 +120,21 @@ public class DivisionMedium extends AppCompatActivity {
             //method to generate new question
             public int QuestionGenerator() {
                 int upperbound = 100;
+                if(upperbound==0)
+                    upperbound++;
                 //generate random values from 0-99
                 int upperbound2=10;
+                if(upperbound2==0)
+                    upperbound2++;
                 //generate random values from 0-9
                 int AddRand1 = rand.nextInt(upperbound2);
                 if(AddRand1==0)
                     AddRand1++;
                 int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
+                if(AddRand2==0)
+                    AddRand2++;
+                if(AddRand2==AddRand1)
+                    AddRand2++;
                 int NewCorrectAnswer=AddRand2/AddRand1;
                 questionTextView.setText(AddRand2 + " / " + AddRand1);
                 return NewCorrectAnswer;

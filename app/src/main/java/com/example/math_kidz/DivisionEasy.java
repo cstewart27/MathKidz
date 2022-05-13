@@ -117,11 +117,17 @@ public class DivisionEasy extends AppCompatActivity {
             //method to generate new question
             public int QuestionGenerator() {
                 int upperbound = 10;
+                if(upperbound==0)
+                    upperbound++;
                 int AddRand1 = rand.nextInt(upperbound);
                 if(AddRand1==0)
                     AddRand1++;
                 int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
                 int NewCorrectAnswer = AddRand2 / AddRand1;
+                if(AddRand2==0)
+                    AddRand2++;
+                if(AddRand2==AddRand1)
+                    AddRand2++;
                 questionTextView.setText(AddRand2 + " / " + AddRand1);
                 return  NewCorrectAnswer;
 
