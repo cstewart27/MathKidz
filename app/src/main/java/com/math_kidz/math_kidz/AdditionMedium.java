@@ -1,4 +1,4 @@
-package com.example.math_kidz;
+package com.math_kidz.math_kidz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.math_kidz.math_kidz.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
-public class AdditionEasy extends AppCompatActivity {
+public class AdditionMedium extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference referenceProfile;
     private FirebaseAuth mAuth;
@@ -37,7 +37,7 @@ public class AdditionEasy extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addition_easy);
+        setContentView(R.layout.activity_addition_medium);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -63,8 +63,8 @@ public class AdditionEasy extends AppCompatActivity {
         Random rand = new Random(); //instance of random class
 
 
-        int upperbound = 10;
-        //generate random values from 0-9
+        int upperbound = 100;
+        //generate random values from 0-99
         int AddRand1 = rand.nextInt(upperbound);
         int AddRand2 = rand.nextInt(upperbound);
 
@@ -74,61 +74,61 @@ public class AdditionEasy extends AppCompatActivity {
 
 
 
-        TextView questionTextView = (TextView) findViewById(R.id.AdditionTextView);
+        TextView questionTextView = (TextView) findViewById(R.id.AdditionMediumTextView);
         questionTextView.setText(AddRand1 + " + " + AddRand2);
 
-        TextView UserInput = (TextView) findViewById(R.id.AddEasyInput);
+        TextView UserInput = (TextView) findViewById(R.id.AddMediumInput);
 
         Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
 
 
 
-            AnswerChecker.setOnClickListener(new View.OnClickListener() {
+        AnswerChecker.setOnClickListener(new View.OnClickListener() {
 
 
 
-                public void onClick(View view) {
+            public void onClick(View view) {
 
 //Checking user input vs answer
-                    if (UserInput.getText().toString().equals(String.valueOf(CorrectAnswer))) {
-                        boolean correct = true;
-                        ScoreDisplay(Score, correct);
-                        CorrectAnswer=QuestionGenerator();
-                        UserInput.setText("");
-
-                    }
-                    else{
-                        boolean incorrect = false;
-                        ScoreDisplay(Score, incorrect);
-
-                    }
+                if (UserInput.getText().toString().equals(String.valueOf(CorrectAnswer))) {
+                    boolean correct = true;
+                    ScoreDisplay(Score, correct);
+                    CorrectAnswer=QuestionGenerator();
+                    UserInput.setText("");
 
                 }
-                //Incrementing and decrementing score based on answer validity
-                private void ScoreDisplay(int num, boolean ans) {
-                    if(ans == true)
-                        Score = Score + 1;
-                    else
-                        Score = Score - 1;
-                    referenceProfile.child("totalScore0").setValue(Score);
-                    getdata();
-
-
-                }
-        //method to generate new question
-                public int QuestionGenerator() {
-                    int upperbound = 10;
-                    int AddRand1 = rand.nextInt(upperbound);
-                    int AddRand2 = rand.nextInt(upperbound);
-                    int NewCorrectAnswer = AddRand1 + AddRand2;
-                    questionTextView.setText(AddRand1 + " + " + AddRand2);
-                    return  NewCorrectAnswer;
-
+                else{
+                    boolean incorrect = false;
+                    ScoreDisplay(Score, incorrect);
 
                 }
 
+            }
+            //Incrementing and decrementing score based on answer validity
+            private void ScoreDisplay(int num, boolean ans) {
+                if(ans == true)
+                    Score = Score + 1;
+                else
+                    Score = Score - 1;
+                referenceProfile.child("totalScore0").setValue(Score);
+                getdata();
 
-            });
+
+            }
+            //method to generate new question
+            public int QuestionGenerator() {
+                int upperbound = 100;
+                int AddRand1 = rand.nextInt(upperbound);
+                int AddRand2 = rand.nextInt(upperbound);
+                int NewCorrectAnswer = AddRand1 + AddRand2;
+                questionTextView.setText(AddRand1 + " + " + AddRand2);
+                return  NewCorrectAnswer;
+
+
+            }
+
+
+        });
 
 
 
@@ -153,69 +153,69 @@ public class AdditionEasy extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 // calling on cancelled method when we receive
                 // any error or we are not able to get the data.
-                Toast.makeText(AdditionEasy.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdditionMedium.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
     //The following are the methods for the individual number buttons
     public void add0 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "0");
     }
     public void add1 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "1");
     }
     public void add2 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "2");
     }
     public void add3 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "3");
     }
     public void add4 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "4");
     }
     public void add5 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "5");
     }
     public void add6 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "6");
     }
     public void add7 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "7");
     }
     public void add8 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "8");
     }
     public void add9 (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "9");
     }
     public void clearCalculator (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
         UserInput.setText("");
     }
     public void addNegative (View v){
-        TextView UserInput = findViewById(R.id.AddEasyInput);
+        TextView UserInput = findViewById(R.id.AddMediumInput);
         theInput = UserInput.getEditableText();
 
         if (positiveNumber == true){

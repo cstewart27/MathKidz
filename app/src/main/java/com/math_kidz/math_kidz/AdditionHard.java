@@ -1,4 +1,4 @@
-package com.example.math_kidz;
+package com.math_kidz.math_kidz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,11 +8,12 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.math_kidz.math_kidz.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -23,7 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Random;
 
-public class DivisionMedium extends AppCompatActivity {
+public class AdditionHard extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference referenceProfile;
     private FirebaseAuth mAuth;
@@ -37,7 +38,7 @@ public class DivisionMedium extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_division_medium);
+        setContentView(R.layout.activity_addition_hard);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -53,7 +54,7 @@ public class DivisionMedium extends AppCompatActivity {
         ImageButton BackArrow = (ImageButton) findViewById(R.id.BackArrow);
         BackArrow.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),SubjectDifficultyDivision.class);
+                Intent i = new Intent(getApplicationContext(),SubjectDifficultyAddition.class);
                 startActivity(i);
 
 
@@ -63,23 +64,23 @@ public class DivisionMedium extends AppCompatActivity {
 
 
         Random rand = new Random(); //instance of random class
-        int upperbound = 100;
-        //generate random values from 0-99
-        int upperbound2=10;
-        //generate random values from 0-9
-        int AddRand1 = rand.nextInt(upperbound2);
-        int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
+
+
+        int upperbound = 1000;
+        //generate random values from 0-999
+        int AddRand1 = rand.nextInt(upperbound);
+        int AddRand2 = rand.nextInt(upperbound);
 
 
         //generating answer for user to pick from
-        CorrectAnswer = AddRand2 / AddRand1;
+        CorrectAnswer = AddRand1 + AddRand2;
 
 
 
-        TextView questionTextView = (TextView) findViewById(R.id.DivisionMediumTextView);
-        questionTextView.setText(AddRand2 + " / " + AddRand1);
+        TextView questionTextView = (TextView) findViewById(R.id.AdditionHardTextView);
+        questionTextView.setText(AddRand1 + " + " + AddRand2);
 
-        TextView UserInput = (TextView) findViewById(R.id.DivMediumInput);
+        TextView UserInput = (TextView) findViewById(R.id.AddHardInput);
 
         Button AnswerChecker = (Button) findViewById(R.id.CheckButton);
 
@@ -119,25 +120,13 @@ public class DivisionMedium extends AppCompatActivity {
             }
             //method to generate new question
             public int QuestionGenerator() {
-                int upperbound = 100;
-                if(upperbound==0)
-                    upperbound++;
-                //generate random values from 0-99
-                int upperbound2=10;
-                if(upperbound2==0)
-                    upperbound2++;
-                //generate random values from 0-9
-                int AddRand1 = rand.nextInt(upperbound2);
-                if(AddRand1==0)
-                    AddRand1++;
-                int AddRand2 = AddRand1 *(rand.nextInt(upperbound));
-                if(AddRand2==0)
-                    AddRand2++;
-                if(AddRand2==AddRand1)
-                    AddRand2++;
-                int NewCorrectAnswer=AddRand2/AddRand1;
-                questionTextView.setText(AddRand2 + " / " + AddRand1);
-                return NewCorrectAnswer;
+                int upperbound = 1000;
+                int AddRand1 = rand.nextInt(upperbound);
+                int AddRand2 = rand.nextInt(upperbound);
+                int NewCorrectAnswer = AddRand1 + AddRand2;
+                questionTextView.setText(AddRand1 + " + " + AddRand2);
+                return  NewCorrectAnswer;
+
 
             }
 
@@ -167,69 +156,69 @@ public class DivisionMedium extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 // calling on cancelled method when we receive
                 // any error or we are not able to get the data.
-                Toast.makeText(DivisionMedium.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdditionHard.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
             }
         });
 
     }
     //The following are the methods for the individual number buttons
     public void add0 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "0");
     }
     public void add1 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "1");
     }
     public void add2 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "2");
     }
     public void add3 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "3");
     }
     public void add4 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "4");
     }
     public void add5 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "5");
     }
     public void add6 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "6");
     }
     public void add7 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "7");
     }
     public void add8 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "8");
     }
     public void add9 (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText(theInput + "9");
     }
     public void clearCalculator (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
         UserInput.setText("");
     }
     public void addNegative (View v){
-        TextView UserInput = findViewById(R.id.DivMediumInput);
+        TextView UserInput = findViewById(R.id.AddHardInput);
         theInput = UserInput.getEditableText();
 
         if (positiveNumber == true){
